@@ -1,5 +1,5 @@
 # Clever-Prompt
-💡 How to Save AI Tokens with a Clever Prompt (No Coding Needed)
+💡 How to Save AI Tokens with a Clever Prompt
 
 When people talk about “saving tokens” with AI, it often sounds very technical.
 But the truth is: you don’t need a programming background to understand (or use) this idea.
