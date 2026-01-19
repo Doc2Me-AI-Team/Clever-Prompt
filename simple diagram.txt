@@ -1,0 +1,39 @@
+┌────────────────────────────────────────────────────┐
+│ STEP 1: Skills Library (stored locally)            │
+│                                                    │
+│  • Document Q&A skill                               │
+│  • Contract Analysis skill                          │
+│  • Summarization skill                              │
+│                                                    │
+│  (Not sent to the AI unless needed)                │
+└────────────────────────────────────────────────────┘
+                     │
+                     │ User asks a question
+                     ▼
+┌────────────────────────────────────────────────────┐
+│ STEP 2: Skill Router (cheap decision step)         │
+│                                                    │
+│  Reads the user question and picks ONE skill:      │
+│   - “summarize …”  → Summarization                 │
+│   - “contract …”   → Contract Analysis             │
+│   - otherwise      → Document Q&A                  │
+└────────────────────────────────────────────────────┘
+                     │
+                     │ Selected skill only
+                     ▼
+┌────────────────────────────────────────────────────┐
+│ STEP 3: Send a Small, Focused Request to the AI    │
+│                                                    │
+│  AI receives:                                      │
+│   ✅ Only the chosen skill instructions            │
+│   ✅ The user question                             │
+│   ✅ The needed document/context                   │
+│                                                    │
+│  AI does NOT receive the other skills              │
+│  → fewer tokens → lower cost                       │
+└────────────────────────────────────────────────────┘
+                     │
+                     ▼
+            ┌───────────────────┐
+            │      Answer       │
+            └───────────────────┘
